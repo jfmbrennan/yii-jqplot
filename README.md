@@ -1,4 +1,5 @@
-== jqPlot ==
+jqPlot
+============
 
 ### A Versatile and Expandable jQuery Plotting Plugin
  
@@ -26,30 +27,30 @@ Computation and drawing of lines, axes, shadows even the grid itself is handled 
 
 ###Downloads, Source and Change Log
 
-Download distributions and sources  [http://bitbucket.org/cleonello/jqplot/downloads/](http://bitbucket.org/cleonello/jqplot/downloads/)
+Download distributions and sources  http://bitbucket.org/cleonello/jqplot/downloads/
  
-A copy of the change log is on the wiki here [http://bitbucket.org/cleonello/jqplot/wiki/changelog](http://bitbucket.org/cleonello/jqplot/wiki/changelog))
+A copy of the change log is on the wiki here http://bitbucket.org/cleonello/jqplot/wiki/changelog
  
-The public source repository and changesets are here on bitbucket [http://bitbucket.org/cleonello/jqplot/changesets/](http://bitbucket.org/cleonello/jqplot/changesets/).  Note, the public hg repository may lag the zip, tgz and bz2 downloads.  The public hg repository is updated nightly.
+The public source repository and changesets are here on bitbucket http://bitbucket.org/cleonello/jqplot/changesets/.  Note, the public hg repository may lag the zip, tgz and bz2 downloads.  The public hg repository is updated nightly.
  
 
 ###What's jqPlot Worth?
 
-jqPlot is **Free** and Open Source software.  jqPlot is probably **worth** more than that, however.  If you agree, **[http://www.jqplot.com/donate/|please consider a donation]** to further development.
+jqPlot is **Free** and Open Source software.  jqPlot is probably **worth** more than that, however.  If you agree, **http://www.jqplot.com/donate/ please consider a donation** to further development.
 
 
 ###For More jqPlot Information
  
-The jqPlot homepage is at [http://www.jqplot.com/](http://www.jqplot.com/).
+The jqPlot homepage is at http://www.jqplot.com/
 
-Examples and tests are at [http://www.jqplot.com/tests/](http://www.jqplot.com/tests/).
+Examples and tests are at http://www.jqplot.com/tests/
 
-For a description of available options (in progress, not complete) see [jqPlotOptions|jqPlot Options](jqPlotOptions|jqPlot Options)
+For a description of available options (in progress, not complete) see jqPlotOptions|jqPlot
 
-Documentation is at [http://www.jqplot.com/docs/](http://www.jqplot.com/docs/).
+Documentation is at http://www.jqplot.com/docs/
 
-For **bug reports**, use the issue tracker here on bitbucket [http://bitbucket.org/cleonello/jqplot/issues/](http://bitbucket.org/cleonello/jqplot/issues/).
+For **bug reports**, use the issue tracker here on bitbucket http://bitbucket.org/cleonello/jqplot/issues/
 
-For **questions and discussion**, use the **mailing list** at [http://groups.google.com/group/jqplot-users](http://groups.google.com/group/jqplot-users).
+For **questions and discussion**, use the **mailing list** at http://groups.google.com/group/jqplot-users
 
 jqPlot is released under the GPL and MIT licenses.
