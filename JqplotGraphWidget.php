@@ -1,26 +1,46 @@
 <?php
 Yii::import('application.extensions.jqplot.JqplotWidget');
 class JqplotGraphWidget extends JqplotWidget{
-	/**
-	 * @var string the name of the container element that contains the progress bar. Defaults to 'div'.
-	 */
-	public $tagName = 'div';
 
-	/**
-	 * Run this widget.
-	 * This method registers necessary javascript and renders the needed HTML code.
-	 */
-	public function run(){
-		$id=$this->getId();
-		$this->htmlOptions['id']=$id;        
+    public $tagName='div';
 
-		echo CHtml::openTag($this->tagName,$this->htmlOptions);
-		echo CHtml::closeTag($this->tagName);
+    public $ajaxOptions=array();
 
-		$plotdata=CJavaScript::encode($this->data);
-		$flotoptions=CJavaScript::encode($this->options);
-		
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"$.jqplot('$id', $plotdata, $flotoptions);");
-	}
+    public $defaultAjaxOptions=array(
+        'dataType'=>'json',
+        'async'=>false,
+        'success'=>'js:function(data){ret=data;}'
+    );
 
+    protected function createJQPlotScript($plotdata){
+        $id=$this->htmlOptions['id'];
+        $flotoptions=CJavaScript::encode($this->options);
+        return "$.jqplot('$id',$plotdata,$flotoptions);";
+    }
+
+    protected function createAjaxJQPlotScript(){
+        $ajaxoptions=array_merge($this->ajaxOptions,$this->defaultAjaxOptions);
+        $ajax='$.ajax('.CJavaScript::encode($ajaxoptions).');';
+        $datarenderer='js:function(url,plot,options){var ret=null;'.$ajax.'return ret;}';
+        $this->options['dataRenderer']=$datarenderer;
+        $flotoptions=CJavaScript::encode($this->options);
+        $id=$this->htmlOptions['id'];
+        return "$.jqplot('$id',[],$flotoptions);";
+    }
+
+    public function run(){
+        if(!isset($this->htmlOptions['id']))
+            $this->htmlOptions['id']=$this->getId();
+        echo CHtml::tag($this->tagName,$this->htmlOptions,'');
+
+        if(is_array($this->data))
+            $script=$this->createJQPlotScript(CJavaScript::encode($this->data));
+        else {
+            if(!isset($this->ajaxOptions['url']) && is_string($this->data))
+                $this->ajaxOptions['url']=$this->data;
+            $script=$this->createAjaxJQPlotScript($this->ajaxOptions);
+        }
+
+        Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$this->htmlOptions['id'],$script);
+    }
 }

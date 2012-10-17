@@ -60,10 +60,10 @@ abstract class JqplotWidget extends CWidget{
 		}
 	}
 
-	protected function registerScriptFile($fileName,$position=CClientScript::POS_HEAD){
+	protected function registerScriptFile($fileName,$position=CClientScript::POS_END){
 		Yii::app()->clientScript->registerScriptFile($this->scriptUrl.'/'.$fileName,$position);
 	}
-	protected function registerPluginScriptFile($fileName,$position=CClientScript::POS_HEAD){
+	protected function registerPluginScriptFile($fileName,$position=CClientScript::POS_END){
 		Yii::app()->clientScript->registerScriptFile($this->scriptUrl.'/plugins/'.$fileName,$position);
 	}
 	protected function registerCssFile($fileName){
