@@ -1,5 +1,5 @@
 <?php
-Yii::import('application.extensions.jqplot.JqplotWidget');
+include(dirname(__FILE__).'/JqplotWidget.php');
 class JqplotGraphWidget extends JqplotWidget{
 
     public $tagName='div';
