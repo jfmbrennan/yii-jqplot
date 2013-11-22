@@ -1,5 +1,5 @@
 {
-    "name": " jfmbrennan/yii-jqplot",
+    "name": "jfmbrennan/yii-jqplot",
     "description": "A Versatile and Expandable jQuery Plotting Plugin",
     "keywords": ["jqplot","charts","yii","jquery"],
     "type": "yii-extension",
